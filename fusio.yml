@@ -1,0 +1,195 @@
+routes:
+  "/akun":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Akun-Collection
+        action: App\Akun\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Akun
+        action: App\Akun\Action\Insert
+  "/akun/:akun_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Akun
+        action: App\Akun\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Akun
+        action: App\Akun\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\Akun\Action\Delete
+  "/kategori-akun":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Kategori-Akun-Collection
+        action: App\KategoriAkun\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Kategori-Akun
+        action: App\KategoriAkun\Action\Insert
+  "/kategori-akun/:kategori_akun_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Kategori-Akun
+        action: App\KategoriAkun\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Kategori-Akun
+        action: App\KategoriAkun\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\KategoriAkun\Action\Delete
+  "/header-akun":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Header-Akun-Collection
+        action: App\HeaderAkun\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Header-Akun
+        action: App\HeaderAkun\Action\Insert
+  "/header-akun/:header_akun_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Header-Akun
+        action: App\HeaderAkun\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Header-Akun
+        action: App\HeaderAkun\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\HeaderAkun\Action\Delete
+  "/akun-tambahan":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Akun-Tambahan-Collection
+        action: App\AkunTambahan\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Akun-Tambahan
+        action: App\AkunTambahan\Action\Insert
+  "/akun-tambahan/:akun_tambahan_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Akun-Tambahan
+        action: App\AkunTambahan\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Akun-Tambahan
+        action: App\AkunTambahan\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\AkunTambahan\Action\Delete
+  "/jenis-akun-tambahan":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Jenis-Akun-Tambahan-Collection
+        action: App\JenisAkunTambahan\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Jenis-Akun-Tambahan
+        action: App\JenisAkunTambahan\Action\Insert
+  "/jenis-akun-tambahan/:jenis_akun_tambahan_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Jenis-Akun-Tambahan
+        action: App\JenisAkunTambahan\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Jenis-Akun-Tambahan
+        action: App\JenisAkunTambahan\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\JenisAkunTambahan\Action\Delete
+  "/cabang":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Cabang-Collection
+        action: App\Cabang\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Cabang
+        action: App\Cabang\Action\Insert
+  "/cabang/:cabang_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Cabang
+        action: App\Cabang\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Cabang
+        action: App\Cabang\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\Cabang\Action\Delete
+schema:
+  Akun: !include resources/schema/akun/entity.json
+  Akun-Collection: !include resources/schema/akun/collection.json
+  Kategori-Akun: !include resources/schema/kategori_akun/entity.json
+  Kategori-Akun-Collection: !include resources/schema/kategori_akun/collection.json
+  Header-Akun: !include resources/schema/header_akun/entity.json
+  Header-Akun-Collection: !include resources/schema/header_akun/collection.json
+  Akun-Tambahan: !include resources/schema/akun_tambahan/entity.json
+  Akun-Tambahan-Collection: !include resources/schema/akun_tambahan/collection.json
+  Jenis-Akun-Tambahan: !include resources/schema/jenis_akun_tambahan/entity.json
+  Jenis-Akun-Tambahan-Collection: !include resources/schema/jenis_akun_tambahan/collection.json
+  Cabang: !include resources/schema/cabang/entity.json
+  Cabang-Collection: !include resources/schema/cabang/collection.json
+  Message: !include resources/schema/default/message.json
+connection:
+  Default-Connection:
+    class: Fusio\Adapter\Sql\Connection\Sql
+    config:
+      type: pdo_mysql
+      host: localhost
+      username: root
+      password: root
+      database: fusio_apotek
+migration:
+  Default-Connection:
+    - resources/sql/v1_akun_schema.sql

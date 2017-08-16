@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "title": "transfer-collection",
+  "properties": {
+    "totalCount": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "file:///entity.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "title": "btctransfer",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "user_code": {
+      "type": "integer"
+    },
+    "btcaddress": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "txhash": {
+      "type": "string"
+    },
+    "rate": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "ntc": {
+      "type": "string"
+    },
+    "claimed": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "btcaddress",
+    "amount"
+  ]
+}

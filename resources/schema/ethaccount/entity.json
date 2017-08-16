@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "title": "ethaccount",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "user_code": {
+      "type": "integer"
+    },
+    "a": {
+      "type": "string"
+    },
+    "p": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "user_code",
+    "a",
+    "p"
+  ]
+}

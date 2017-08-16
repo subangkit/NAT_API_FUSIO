@@ -1,0 +1,20 @@
+language: php
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+sudo: false
+services:
+  - mysql
+  - memcached
+  - mongodb
+before_install:
+  - phpenv config-rm xdebug.ini
+  - mysql -e 'create database fusio;'
+install:
+  - composer install
+  - php bin/fusio install
+before_script:
+  - php bin/fusio deploy
+script:
+  - vendor/bin/phpunit

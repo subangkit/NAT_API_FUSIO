@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "title": "balance",
+  "properties": {
+    "address": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "string"
+    },
+    "pow": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "name",
+    "codefication"
+  ]
+}

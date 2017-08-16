@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "title": "set referal",
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "email",
+    "token"
+  ]
+}

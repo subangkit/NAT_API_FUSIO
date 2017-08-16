@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "title": "currency",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "codefication": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "name",
+    "codefication"
+  ]
+}

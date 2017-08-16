@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "title": "resend",
+  "properties": {
+    "email": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

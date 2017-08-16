@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "title": "transfer",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "user_code": {
+      "type": "integer"
+    },
+    "currency_code": {
+      "type": "integer"
+    },
+    "wallet_code": {
+      "type": "integer"
+    },
+    "address_from": {
+      "type": "string"
+    },
+    "address_to": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "currency_code",
+    "address"
+  ]
+}

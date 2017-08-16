@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "title": "wallet",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "user_code": {
+      "type": "integer"
+    },
+    "currency_code": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "integer"
+    },
+    "unconfirm_balance": {
+      "type": "integer"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "currency_code",
+    "address"
+  ]
+}

@@ -1,0 +1,105 @@
+routes:
+  "/currency":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Currency-Collection
+        action: App\Currency\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Currency
+        action: App\Currency\Action\Insert
+  "/currency/:currency_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Currency
+        action: App\Currency\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Currency
+        action: App\Currency\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\Currency\Action\Delete
+  "/transfer":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Transfer-Collection
+        action: App\Transfer\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Transfer
+        action: App\Transfer\Action\Insert
+  "/transfer/:transfer_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Transfer
+        action: App\Transfer\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Transfer
+        action: App\Transfer\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\Transfer\Action\Delete
+  "/wallet":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Wallet-Collection
+        action: App\Wallet\Action\Collection
+      POST:
+        public: false
+        response: Message
+        request: Wallet
+        action: App\Wallet\Action\Insert
+  "/wallet/:wallet_code":
+    version: 1
+    methods:
+      GET:
+        public: true
+        response: Wallet
+        action: App\Wallet\Action\Row
+      POST:
+        public: false
+        response: Message
+        request: Wallet
+        action: App\Wallet\Action\Update
+      DELETE:
+        public: false
+        response: Message
+        action: App\Wallet\Action\Delete
+schema:
+  Currency: !include resources/schema/currency/entity.json
+  Currency-Collection: !include resources/schema/currency/collection.json
+  Transfer: !include resources/schema/transfer/entity.json
+  Transfer-Collection: !include resources/schema/transfer/collection.json
+  Wallet: !include resources/schema/wallet/entity.json
+  Wallet-Collection: !include resources/schema/wallet/collection.json
+  Message: !include resources/schema/default/message.json
+connection:
+  Default-Connection:
+    class: Fusio\Adapter\Sql\Connection\Sql
+    config:
+      type: pdo_mysql
+      host: localhost
+      username: root
+      password: root
+      database: data_natcoin
+migration:
+  Default-Connection:
+    - resources/sql/v1_akun_schema.sql
